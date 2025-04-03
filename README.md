@@ -1,10 +1,21 @@
-# react-intersection-observer-inview
+# React Intersection Observer Inview
 
-## Getting Started
+A lightweight and simple React hook for detecting if an element is in the viewport using the Intersection Observer API. Perfect for lazy loading, infinite scrolling, animations, and more!
+
+## Installation
 
 ```bash
 npm install react-intersection-observer-inview
+or
+yarn install react-intersection-observer-inview
 ```
+
+# Features
+
+- Uses the Intersection Observer API for efficient viewport detection.
+- Simple React hook interface for easy integration.
+- Minimal setup required.
+- TypeScript support for better development experience.
 
 ## Usage
 
@@ -12,31 +23,32 @@ npm install react-intersection-observer-inview
 import React from 'react';
 import { useIntersectionObserver } from 'react-intersection-observer-inview';
 
-const Component = () => {
+const MyComponent = () => {
   const { ref, inView } = useIntersectionObserver({
-    // Optional options
-    root: // Not used because ref was used
-    threshold: 0,
-    rootMargin: '0px 0px 0px 0px',
+    threshold: 0.5,  // Element is considered in view when 50% is visible
+    rootMargin: '0px 0px 0px 0px', // Optional margin for the root element
   });
 
   return (
     <div ref={ref}>
-      <span>{`Inview state ${inView}.`}</span>
+      <span>{`In View: ${inView ? 'Yes' : 'No'}`}</span>
     </div>
   );
 };
+
+export default MyComponent;
+
 ```
 
 ## Props
-- `root?` - Intersection element
-- `rootMargin?` - Css margin property "10px 20px 30px 40px" (top, right, bottom, left)
-- `threshold?` - Visible before percentage 0 and 1
+- `root?` - The element to use as the viewport for intersection checking. Defaults to the browser viewport.
+- `rootMargin?` - 	Margin around the root element. Accepts CSS margin property values.
+- `threshold?` - Percentage of the target element's visibility required to trigger the observer. (0 - 1)
 
-## Return properties
-- `ref` - Referance element reactRef
-- `inView` - Element view state 
-- `entry?` - entry monitor isVisible true/false
+## Return values
+- `ref` - The reference to be attached to the target element.
+- `inView` - `true` if the element is in the viewport, otherwise `false`.
+- `entry?` - The entry object from the Intersection Observer (optional)
 
 ## LICENSE
 
