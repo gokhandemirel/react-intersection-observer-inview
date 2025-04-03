@@ -3,7 +3,7 @@
 ## Getting Started
 
 ```bash
-  npm install react-intersection-observer-inview
+npm install react-intersection-observer-inview
 ```
 
 ## Usage
@@ -27,6 +27,16 @@ const Component = () => {
   );
 };
 ```
+
+## Props
+- `root?` - Intersection element
+- `rootMargin?` - Css margin property "10px 20px 30px 40px" (top, right, bottom, left)
+- `threshold?` - Visible before percentage 0 and 1
+
+## Return properties
+- `ref` - Referance element reactRef
+- `inView` - Element view state 
+- `entry?` - entry monitor isVisible true/false
 
 ## LICENSE
 

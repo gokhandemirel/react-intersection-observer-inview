@@ -1,12 +1,13 @@
 {
   "name": "react-intersection-observer-inview",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup",
+    "dev": "storybook dev -p 6006",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -17,10 +18,11 @@
     "pagination",
     "observer",
     "intersection",
-    "lazy load",
+    "lazy-load",
     "scroll",
     "infinite",
-    "hooks"
+    "hooks",
+    "slider"
   ],
   "license": "MIT",
   "author": "Gökhan Demirel",
@@ -43,7 +45,7 @@
     "typescript": "^5.7.3"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
